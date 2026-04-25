@@ -64,8 +64,8 @@ export default function StudentFriends() {
   return (
     <div className="p-8">
       <div className="mb-8">
-        <h1 className="text-3xl font-bold mb-2">Friends & Connections</h1>
-        <p className="text-gray-600">Manage your friend list and requests</p>
+        <h1 className="text-4xl font-bold text-gray-900 mb-2">Friends & Connections 👥</h1>
+        <p className="text-lg text-gray-600">Manage your friend list and stay connected</p>
       </div>
 
       <div className="bg-white rounded-xl shadow-sm border border-gray-100 mb-6">
@@ -74,7 +74,7 @@ export default function StudentFriends() {
             onClick={() => setActiveTab('friends')}
             className={`flex-1 px-6 py-4 font-medium transition-colors relative ${
               activeTab === 'friends'
-                ? 'border-b-2 border-indigo-600 text-indigo-600'
+                ? 'border-b-2 border-emerald-600 text-emerald-600'
                 : 'text-gray-600 hover:text-gray-900'
             }`}
           >
@@ -85,7 +85,7 @@ export default function StudentFriends() {
             onClick={() => setActiveTab('requests')}
             className={`flex-1 px-6 py-4 font-medium transition-colors relative ${
               activeTab === 'requests'
-                ? 'border-b-2 border-indigo-600 text-indigo-600'
+                ? 'border-b-2 border-emerald-600 text-emerald-600'
                 : 'text-gray-600 hover:text-gray-900'
             }`}
           >
@@ -109,7 +109,7 @@ export default function StudentFriends() {
                     className="flex items-center justify-between p-4 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors"
                   >
                     <div className="flex items-center gap-4 flex-1">
-                      <div className="w-14 h-14 bg-indigo-600 rounded-full flex items-center justify-center flex-shrink-0">
+                      <div className="w-14 h-14 bg-gradient-to-br from-emerald-600 to-teal-600 rounded-full flex items-center justify-center flex-shrink-0">
                         <span className="text-white font-bold text-lg">{friend.name[0]}</span>
                       </div>
                       <div className="flex-1">
@@ -137,7 +137,7 @@ export default function StudentFriends() {
                           {friend.unreadCount}
                         </div>
                       )}
-                      <button className="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 font-medium flex items-center gap-2">
+                      <button className="px-4 py-2 bg-emerald-600 text-white rounded-lg hover:shadow-lg hover:shadow-emerald-600/30 font-medium flex items-center gap-2 transition-shadow">
                         <MessageCircle className="w-4 h-4" />
                         Message
                       </button>
@@ -155,7 +155,7 @@ export default function StudentFriends() {
                 <p className="text-gray-600 mb-6">
                   Start by browsing compatible matches and sending friend requests
                 </p>
-                <button className="px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 font-medium">
+                <button className="px-6 py-3 bg-gradient-to-r from-emerald-600 to-teal-600 text-white rounded-lg hover:shadow-lg hover:shadow-emerald-600/30 font-medium transition-shadow">
                   Find Matches
                 </button>
               </div>
@@ -170,10 +170,10 @@ export default function StudentFriends() {
                 {friendRequests.map((request) => (
                   <div
                     key={request.id}
-                    className="flex items-center justify-between p-4 bg-blue-50 rounded-xl border border-blue-100"
+                    className="flex items-center justify-between p-4 bg-teal-50 rounded-xl border border-teal-200"
                   >
                     <div className="flex items-center gap-4">
-                      <div className="w-14 h-14 bg-blue-600 rounded-full flex items-center justify-center flex-shrink-0">
+                      <div className="w-14 h-14 bg-gradient-to-br from-teal-600 to-cyan-600 rounded-full flex items-center justify-center flex-shrink-0">
                         <span className="text-white font-bold text-lg">{request.name[0]}</span>
                       </div>
                       <div>
@@ -191,10 +191,10 @@ export default function StudentFriends() {
                     </div>
 
                     <div className="flex gap-2">
-                      <button className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 font-medium">
+                      <button className="px-4 py-2 bg-emerald-600 text-white rounded-lg hover:shadow-lg hover:shadow-emerald-600/30 font-medium transition-shadow">
                         Accept
                       </button>
-                      <button className="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 font-medium">
+                      <button className="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 font-medium transition-colors">
                         Decline
                       </button>
                     </div>

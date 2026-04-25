@@ -1,4 +1,4 @@
-import { Users, Filter, UserPlus, MessageCircle, Sparkles } from 'lucide-react';
+import { Users, Filter, UserPlus, MessageCircle, Sparkles, Heart, MapPin } from 'lucide-react';
 import { useState } from 'react';
 
 export default function StudentMatches() {
@@ -83,19 +83,19 @@ export default function StudentMatches() {
   const getButtonStyle = (status: string) => {
     switch (status) {
       case 'friends':
-        return 'bg-green-600 hover:bg-green-700 text-white';
+        return 'bg-emerald-600 hover:bg-emerald-700 text-white';
       case 'pending':
         return 'bg-gray-400 text-white cursor-not-allowed';
       default:
-        return 'bg-indigo-600 hover:bg-indigo-700 text-white';
+        return 'bg-gradient-to-r from-emerald-600 to-teal-600 hover:shadow-lg hover:shadow-emerald-500/30 text-white';
     }
   };
 
   return (
     <div className="p-8">
-      <div className="mb-8">
-        <h1 className="text-3xl font-bold mb-2">Find Your Perfect Match</h1>
-        <p className="text-gray-600">Discover students with similar lifestyle preferences</p>
+      <div className="mb-10">
+        <h1 className="text-4xl font-bold text-gray-900 mb-2">Find Your Perfect Match 🎯</h1>
+        <p className="text-lg text-gray-600">Discover students with compatible lifestyles and preferences</p>
       </div>
 
       <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 mb-6">
@@ -105,7 +105,7 @@ export default function StudentMatches() {
               onClick={() => setFilterLevel('all')}
               className={`flex-1 px-6 py-3 rounded-lg font-medium transition-colors ${
                 filterLevel === 'all'
-                  ? 'bg-indigo-600 text-white'
+                  ? 'bg-emerald-600 text-white shadow-lg shadow-emerald-600/30'
                   : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
               }`}
             >
@@ -116,7 +116,7 @@ export default function StudentMatches() {
               onClick={() => setFilterLevel('80+')}
               className={`flex-1 px-6 py-3 rounded-lg font-medium transition-colors ${
                 filterLevel === '80+'
-                  ? 'bg-purple-600 text-white'
+                  ? 'bg-gradient-to-r from-teal-600 to-emerald-600 text-white shadow-lg shadow-teal-600/30'
                   : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
               }`}
             >
@@ -129,7 +129,7 @@ export default function StudentMatches() {
             <select
               value={hostelFilter}
               onChange={(e) => setHostelFilter(e.target.value)}
-              className="px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              className="px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-emerald-500"
             >
               <option value="all">All Hostels</option>
               <option value="Green Valley Hostel">Green Valley Hostel</option>
@@ -151,7 +151,7 @@ export default function StudentMatches() {
             className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 hover:shadow-md transition-shadow"
           >
             <div className="flex items-start gap-6">
-              <div className="w-20 h-20 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-full flex items-center justify-center flex-shrink-0">
+              <div className="w-20 h-20 bg-gradient-to-br from-emerald-500 to-teal-500 rounded-full flex items-center justify-center flex-shrink-0">
                 <span className="text-white font-bold text-2xl">{match.name[0]}</span>
               </div>
 
@@ -166,9 +166,9 @@ export default function StudentMatches() {
                   </div>
                   <div className="text-right">
                     <div className="flex items-center gap-2 mb-2">
-                      <div className="text-4xl font-bold text-indigo-600">{match.compatibility}%</div>
+                      <div className="text-4xl font-bold bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">{match.compatibility}%</div>
                       <div className="flex flex-col">
-                        <Sparkles className="w-5 h-5 text-yellow-500" />
+                        <Sparkles className="w-5 h-5 text-amber-500" />
                       </div>
                     </div>
                     <p className="text-xs text-gray-500">Compatibility</p>
@@ -183,7 +183,7 @@ export default function StudentMatches() {
                     {match.matchedPreferences.map((pref) => (
                       <span
                         key={pref}
-                        className="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-medium"
+                        className="px-3 py-1 bg-emerald-100 text-emerald-700 rounded-full text-xs font-medium"
                       >
                         ✓ {pref}
                       </span>
@@ -210,7 +210,7 @@ export default function StudentMatches() {
                       </>
                     )}
                   </button>
-                  <button className="px-6 py-2 border-2 border-indigo-600 text-indigo-600 rounded-lg hover:bg-indigo-50 font-medium">
+                  <button className="px-6 py-2 border-2 border-emerald-600 text-emerald-600 rounded-lg hover:bg-emerald-50 font-medium transition-colors">
                     View Full Profile
                   </button>
                 </div>

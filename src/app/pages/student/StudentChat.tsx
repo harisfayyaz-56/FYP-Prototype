@@ -89,8 +89,8 @@ export default function StudentChat() {
   return (
     <div className="p-8">
       <div className="mb-8">
-        <h1 className="text-3xl font-bold mb-2">Messages</h1>
-        <p className="text-gray-600">Chat with your potential roommates</p>
+        <h1 className="text-4xl font-bold text-gray-900 mb-2">Messages 💬</h1>
+        <p className="text-lg text-gray-600">Chat with your potential roommates</p>
       </div>
 
       <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden" style={{ height: 'calc(100vh - 250px)' }}>
@@ -102,7 +102,7 @@ export default function StudentChat() {
                 <input
                   type="text"
                   placeholder="Search conversations..."
-                  className="w-full pl-10 pr-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                  className="w-full pl-10 pr-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-emerald-500"
                 />
               </div>
             </div>
@@ -113,12 +113,12 @@ export default function StudentChat() {
                   key={conversation.id}
                   onClick={() => setSelectedChat(conversation.id)}
                   className={`w-full p-4 border-b border-gray-100 hover:bg-gray-50 transition-colors text-left ${
-                    selectedChat === conversation.id ? 'bg-indigo-50' : ''
+                    selectedChat === conversation.id ? 'bg-emerald-50' : ''
                   }`}
                 >
                   <div className="flex items-start gap-3">
                     <div className="relative flex-shrink-0">
-                      <div className="w-12 h-12 bg-indigo-600 rounded-full flex items-center justify-center">
+                      <div className="w-12 h-12 bg-gradient-to-br from-emerald-600 to-teal-600 rounded-full flex items-center justify-center">
                         <span className="text-white font-bold">{conversation.name[0]}</span>
                       </div>
                       {conversation.online && (
@@ -135,7 +135,7 @@ export default function StudentChat() {
                       <div className="flex items-center justify-between">
                         <p className="text-sm text-gray-600 truncate">{conversation.lastMessage}</p>
                         {conversation.unreadCount > 0 && (
-                          <div className="w-5 h-5 bg-indigo-600 text-white text-xs rounded-full flex items-center justify-center font-bold flex-shrink-0 ml-2">
+                          <div className="w-5 h-5 bg-emerald-600 text-white text-xs rounded-full flex items-center justify-center font-bold flex-shrink-0 ml-2">
                             {conversation.unreadCount}
                           </div>
                         )}
@@ -150,10 +150,10 @@ export default function StudentChat() {
           <div className="flex-1 flex flex-col">
             {currentChat && (
               <>
-                <div className="p-4 border-b border-gray-200 flex items-center justify-between bg-gray-50">
+                <div className="p-4 border-b border-gray-200 flex items-center justify-between bg-gradient-to-r from-emerald-50 to-teal-50">
                   <div className="flex items-center gap-3">
                     <div className="relative">
-                      <div className="w-10 h-10 bg-indigo-600 rounded-full flex items-center justify-center">
+                      <div className="w-10 h-10 bg-gradient-to-br from-emerald-600 to-teal-600 rounded-full flex items-center justify-center">
                         <span className="text-white font-bold">{currentChat.name[0]}</span>
                       </div>
                       {currentChat.online && (
@@ -181,14 +181,14 @@ export default function StudentChat() {
                       <div
                         className={`max-w-md px-4 py-3 rounded-2xl ${
                           msg.sender === 'me'
-                            ? 'bg-indigo-600 text-white'
+                            ? 'bg-gradient-to-br from-emerald-600 to-teal-600 text-white shadow-lg shadow-emerald-600/20'
                             : 'bg-white border border-gray-200 text-gray-900'
                         }`}
                       >
                         <p className="text-sm">{msg.text}</p>
                         <p
                           className={`text-xs mt-1 ${
-                            msg.sender === 'me' ? 'text-indigo-200' : 'text-gray-500'
+                            msg.sender === 'me' ? 'text-emerald-100' : 'text-gray-500'
                           }`}
                         >
                           {msg.time}
@@ -205,11 +205,11 @@ export default function StudentChat() {
                       value={message}
                       onChange={(e) => setMessage(e.target.value)}
                       placeholder="Type your message..."
-                      className="flex-1 px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                      className="flex-1 px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-emerald-500"
                     />
                     <button
                       type="submit"
-                      className="px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 font-medium flex items-center gap-2"
+                      className="px-6 py-3 bg-gradient-to-r from-emerald-600 to-teal-600 text-white rounded-lg hover:shadow-lg hover:shadow-emerald-600/30 font-medium flex items-center gap-2 transition-shadow"
                     >
                       <Send className="w-5 h-5" />
                       Send
@@ -231,11 +231,11 @@ export default function StudentChat() {
         </div>
       </div>
 
-      <div className="mt-6 bg-blue-50 border border-blue-200 rounded-xl p-6 flex items-start gap-4">
-        <AlertCircle className="w-6 h-6 text-blue-600 flex-shrink-0 mt-1" />
+      <div className="mt-6 bg-emerald-50 border border-emerald-200 rounded-xl p-6 flex items-start gap-4">
+        <AlertCircle className="w-6 h-6 text-emerald-600 flex-shrink-0 mt-1" />
         <div>
-          <h3 className="font-bold text-blue-900 mb-1">Safety First</h3>
-          <p className="text-sm text-blue-800">
+          <h3 className="font-bold text-emerald-900 mb-1">Safety First</h3>
+          <p className="text-sm text-emerald-800">
             Never share personal financial information or send money to people you haven't met in person. Report any suspicious behavior to the admin.
           </p>
         </div>

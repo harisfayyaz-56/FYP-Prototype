@@ -20,20 +20,20 @@ export default function HostelOwnerProfile() {
   return (
     <div className="p-8">
       <div className="mb-8">
-        <h1 className="text-3xl font-bold mb-2">Profile Settings</h1>
-        <p className="text-gray-600">Manage your account information</p>
+        <h1 className="text-4xl font-bold text-gray-900 mb-2">My Account 🔐</h1>
+        <p className="text-lg text-gray-600">Manage your account information</p>
       </div>
 
       <div className="max-w-3xl">
         <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-8 mb-6">
           <div className="flex items-center gap-6 mb-8 pb-8 border-b border-gray-200">
-            <div className="w-24 h-24 bg-purple-100 rounded-full flex items-center justify-center">
-              <User className="w-12 h-12 text-purple-600" />
+            <div className="w-24 h-24 bg-gradient-to-br from-amber-100 to-orange-100 rounded-full flex items-center justify-center">
+              <User className="w-12 h-12 text-amber-600" />
             </div>
             <div>
               <h2 className="text-2xl font-bold mb-1">{formData.name}</h2>
               <p className="text-gray-600">{formData.email}</p>
-              <button className="mt-3 px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 text-sm font-medium">
+              <button className="mt-3 px-4 py-2 bg-amber-600 text-white rounded-lg hover:shadow-lg hover:shadow-amber-600/30 text-sm font-medium transition-shadow">
                 Change Photo
               </button>
             </div>
@@ -49,7 +49,7 @@ export default function HostelOwnerProfile() {
                     type="text"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                    className="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-amber-500"
                   />
                 </div>
               </div>
@@ -62,7 +62,7 @@ export default function HostelOwnerProfile() {
                     type="email"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                    className="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-amber-500"
                   />
                 </div>
               </div>
@@ -75,7 +75,7 @@ export default function HostelOwnerProfile() {
                     type="tel"
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    className="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                    className="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-amber-500"
                   />
                 </div>
               </div>
@@ -86,7 +86,7 @@ export default function HostelOwnerProfile() {
                   type="text"
                   value={formData.gstNumber}
                   onChange={(e) => setFormData({ ...formData, gstNumber: e.target.value })}
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-amber-500"
                 />
               </div>
 
@@ -98,7 +98,7 @@ export default function HostelOwnerProfile() {
                     type="text"
                     value={formData.address}
                     onChange={(e) => setFormData({ ...formData, address: e.target.value })}
-                    className="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                    className="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-amber-500"
                   />
                 </div>
               </div>
@@ -109,7 +109,7 @@ export default function HostelOwnerProfile() {
                   value={formData.bio}
                   onChange={(e) => setFormData({ ...formData, bio: e.target.value })}
                   rows={4}
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-amber-500"
                 />
               </div>
             </div>
@@ -117,7 +117,7 @@ export default function HostelOwnerProfile() {
             <div className="flex justify-end pt-6 border-t border-gray-200">
               <button
                 type="submit"
-                className="flex items-center gap-2 px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 font-medium"
+                className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-amber-600 to-orange-600 text-white rounded-lg hover:shadow-lg hover:shadow-amber-600/30 font-medium transition-shadow"
               >
                 <Save className="w-5 h-5" />
                 Save Changes

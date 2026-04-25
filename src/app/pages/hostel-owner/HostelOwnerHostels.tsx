@@ -20,12 +20,12 @@ export default function HostelOwnerHostels() {
     <div className="p-8">
       <div className="mb-8 flex justify-between items-center">
         <div>
-          <h1 className="text-3xl font-bold mb-2">My Hostels</h1>
-          <p className="text-gray-600">Manage your hostel listings</p>
+          <h1 className="text-4xl font-bold text-gray-900 mb-2">My Hostels 🏨</h1>
+          <p className="text-lg text-gray-600">Manage your hostel listings</p>
         </div>
         <Link
           to="/hostel-owner/add-hostel"
-          className="px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 font-medium"
+          className="px-6 py-3 bg-gradient-to-r from-amber-600 to-orange-600 text-white rounded-lg hover:shadow-lg hover:shadow-amber-600/30 font-medium transition-shadow"
         >
           + Add New Hostel
         </Link>
@@ -36,8 +36,8 @@ export default function HostelOwnerHostels() {
           <div key={hostel.id} className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
             <div className="flex items-start justify-between mb-6">
               <div className="flex items-start gap-4">
-                <div className="w-16 h-16 bg-purple-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                  <Building2 className="w-8 h-8 text-purple-600" />
+                <div className="w-16 h-16 bg-gradient-to-br from-amber-100 to-orange-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <Building2 className="w-8 h-8 text-amber-600" />
                 </div>
                 <div>
                   <h3 className="text-2xl font-bold mb-2">{hostel.name}</h3>
@@ -45,7 +45,7 @@ export default function HostelOwnerHostels() {
                     <MapPin className="w-4 h-4" />
                     <span className="text-sm">{hostel.location}</span>
                   </div>
-                  <span className="inline-block px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-medium">
+                  <span className="inline-block px-3 py-1 bg-emerald-100 text-emerald-700 rounded-full text-xs font-medium">
                     {hostel.status}
                   </span>
                 </div>
@@ -62,35 +62,35 @@ export default function HostelOwnerHostels() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-6">
-              <div className="bg-blue-50 p-4 rounded-lg">
+              <div className="bg-orange-50 border border-orange-200 p-4 rounded-lg">
                 <p className="text-sm text-gray-600 mb-1">Total Floors</p>
-                <p className="text-2xl font-bold text-blue-700">{hostel.floors}</p>
+                <p className="text-2xl font-bold text-orange-700">{hostel.floors}</p>
               </div>
-              <div className="bg-purple-50 p-4 rounded-lg">
+              <div className="bg-amber-50 border border-amber-200 p-4 rounded-lg">
                 <p className="text-sm text-gray-600 mb-1">Total Rooms</p>
-                <p className="text-2xl font-bold text-purple-700">{hostel.totalRooms}</p>
+                <p className="text-2xl font-bold text-amber-700">{hostel.totalRooms}</p>
               </div>
-              <div className="bg-green-50 p-4 rounded-lg">
+              <div className="bg-emerald-50 border border-emerald-200 p-4 rounded-lg">
                 <div className="flex items-center gap-2 mb-1">
                   <Users className="w-4 h-4 text-gray-600" />
                   <p className="text-sm text-gray-600">Occupancy</p>
                 </div>
-                <p className="text-2xl font-bold text-green-700">
+                <p className="text-2xl font-bold text-emerald-700">
                   {hostel.occupiedRooms}/{hostel.totalRooms}
                 </p>
-                <div className="w-full bg-green-200 h-2 rounded-full mt-2">
+                <div className="w-full bg-emerald-200 h-2 rounded-full mt-2">
                   <div
-                    className="bg-green-600 h-2 rounded-full"
+                    className="bg-emerald-600 h-2 rounded-full"
                     style={{ width: `${(hostel.occupiedRooms / hostel.totalRooms) * 100}%` }}
                   />
                 </div>
               </div>
-              <div className="bg-indigo-50 p-4 rounded-lg">
+              <div className="bg-orange-50 border border-orange-200 p-4 rounded-lg">
                 <div className="flex items-center gap-2 mb-1">
                   <DollarSign className="w-4 h-4 text-gray-600" />
                   <p className="text-sm text-gray-600">Price/Student</p>
                 </div>
-                <p className="text-2xl font-bold text-indigo-700">{hostel.pricePerStudent}</p>
+                <p className="text-2xl font-bold text-orange-700">{hostel.pricePerStudent}</p>
                 <p className="text-xs text-gray-500 mt-1">per month</p>
               </div>
             </div>
@@ -101,7 +101,7 @@ export default function HostelOwnerHostels() {
                 {hostel.amenities.map((amenity) => (
                   <span
                     key={amenity}
-                    className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm"
+                    className="px-3 py-1 bg-amber-100 text-amber-700 rounded-full text-sm font-medium"
                   >
                     {amenity}
                   </span>
@@ -119,7 +119,7 @@ export default function HostelOwnerHostels() {
           <p className="text-gray-600 mb-6">Get started by adding your first hostel listing</p>
           <Link
             to="/hostel-owner/add-hostel"
-            className="inline-block px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 font-medium"
+            className="inline-block px-6 py-3 bg-gradient-to-r from-amber-600 to-orange-600 text-white rounded-lg hover:shadow-lg hover:shadow-amber-600/30 font-medium transition-shadow"
           >
             Add Your First Hostel
           </Link>

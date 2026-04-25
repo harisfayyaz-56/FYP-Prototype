@@ -1,5 +1,5 @@
 import { Outlet, Link, useLocation } from 'react-router';
-import { LayoutDashboard, Building2, Users, UserPlus, MessageCircle, User, LogOut, Home } from 'lucide-react';
+import { LayoutDashboard, Building2, Users, UserPlus, MessageCircle, User, LogOut, Home, ArrowRight } from 'lucide-react';
 
 export default function StudentLayout() {
   const location = useLocation();
@@ -22,46 +22,56 @@ export default function StudentLayout() {
 
   return (
     <div className="flex h-screen bg-gray-50">
-      <aside className="w-64 bg-indigo-900 text-white flex flex-col">
-        <div className="p-6 border-b border-indigo-800">
-          <div className="flex items-center gap-2">
-            <Home className="w-8 h-8 text-indigo-300" />
+      {/* Sidebar */}
+      <aside className="w-64 bg-gradient-to-b from-slate-900 to-slate-800 text-white flex flex-col border-r border-slate-700 shadow-xl">
+        {/* Logo Section */}
+        <div className="p-6 border-b border-slate-700">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-lg flex items-center justify-center">
+              <Home className="w-6 h-6 text-white" />
+            </div>
             <div>
-              <h1 className="text-xl font-bold">LiviSync</h1>
-              <p className="text-xs text-indigo-300">Student Portal</p>
+              <h1 className="text-lg font-bold">LiviSync</h1>
+              <p className="text-xs text-slate-400">Student Portal</p>
             </div>
           </div>
         </div>
 
-        <nav className="flex-1 p-4">
-          <ul className="space-y-2">
-            {navItems.map((item) => {
-              const Icon = item.icon;
-              const active = isActive(item.path);
+        {/* Navigation */}
+        <nav className="flex-1 p-4 space-y-1 overflow-y-auto">
+          {navItems.map((item) => {
+            const Icon = item.icon;
+            const active = isActive(item.path);
 
-              return (
-                <li key={item.path}>
-                  <Link
-                    to={item.path}
-                    className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-colors ${
-                      active
-                        ? 'bg-indigo-600 text-white'
-                        : 'text-indigo-200 hover:bg-indigo-800'
-                    }`}
-                  >
-                    <Icon className="w-5 h-5" />
-                    <span>{item.label}</span>
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
+            return (
+              <Link
+                key={item.path}
+                to={item.path}
+                className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-200 group ${
+                  active
+                    ? 'bg-gradient-to-r from-emerald-600 to-teal-600 text-white shadow-md'
+                    : 'text-slate-300 hover:bg-slate-700/50 hover:text-white'
+                }`}
+              >
+                <Icon className={`w-5 h-5 transition-transform group-hover:scale-110 ${active ? 'scale-110' : ''}`} />
+                <span className="font-medium text-sm">{item.label}</span>
+              </Link>
+            );
+          })}
         </nav>
 
-        <div className="p-4 border-t border-indigo-800">
+        {/* Divider */}
+        <div className="px-4 py-3 border-t border-slate-700">
+          {/* Profile Quick Access */}
+          <div className="mb-3 p-3 bg-slate-700/30 rounded-lg border border-slate-600">
+            <p className="text-xs text-slate-400 mb-2">Logged in as</p>
+            <p className="text-sm font-semibold">Ali Khan</p>
+          </div>
+
+          {/* Logout Button */}
           <Link
             to="/"
-            className="flex items-center gap-3 px-4 py-3 text-indigo-200 hover:bg-indigo-800 rounded-lg transition-colors"
+            className="flex items-center gap-3 px-4 py-3 text-slate-300 hover:bg-red-500/10 hover:text-red-400 rounded-lg transition-colors font-medium text-sm"
           >
             <LogOut className="w-5 h-5" />
             <span>Logout</span>
@@ -69,6 +79,7 @@ export default function StudentLayout() {
         </div>
       </aside>
 
+      {/* Main Content */}
       <main className="flex-1 overflow-auto">
         <Outlet />
       </main>

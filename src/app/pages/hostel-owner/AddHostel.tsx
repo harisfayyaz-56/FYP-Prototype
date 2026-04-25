@@ -49,14 +49,14 @@ export default function AddHostel() {
   return (
     <div className="p-8">
       <div className="mb-8">
-        <h1 className="text-3xl font-bold mb-2">Add New Hostel</h1>
-        <p className="text-gray-600">Fill in the details to list your hostel on LiviSync</p>
+        <h1 className="text-4xl font-bold text-gray-900 mb-2">Add New Hostel ✨</h1>
+        <p className="text-lg text-gray-600">Fill in the details to list your hostel on LiviSync</p>
       </div>
 
       <form onSubmit={handleSubmit} className="max-w-4xl">
         <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-8 mb-6">
           <h2 className="text-xl font-bold mb-6 flex items-center gap-2">
-            <Building2 className="w-6 h-6 text-purple-600" />
+            <Building2 className="w-6 h-6 text-amber-600" />
             Basic Information
           </h2>
 
@@ -68,7 +68,7 @@ export default function AddHostel() {
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                 placeholder="e.g., Green Valley Hostel"
-                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-amber-500"
                 required
               />
             </div>
@@ -80,7 +80,7 @@ export default function AddHostel() {
                 onChange={(e) => setFormData({ ...formData, description: e.target.value })}
                 placeholder="Describe your hostel and what makes it special..."
                 rows={4}
-                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-amber-500"
               />
             </div>
           </div>
@@ -88,7 +88,7 @@ export default function AddHostel() {
 
         <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-8 mb-6">
           <h2 className="text-xl font-bold mb-6 flex items-center gap-2">
-            <MapPin className="w-6 h-6 text-purple-600" />
+            <MapPin className="w-6 h-6 text-amber-600" />
             Location
           </h2>
 
@@ -100,7 +100,7 @@ export default function AddHostel() {
                 value={formData.address}
                 onChange={(e) => setFormData({ ...formData, address: e.target.value })}
                 placeholder="e.g., 123 Mall Road"
-                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-amber-500"
                 required
               />
             </div>
@@ -112,7 +112,7 @@ export default function AddHostel() {
                 value={formData.city}
                 onChange={(e) => setFormData({ ...formData, city: e.target.value })}
                 placeholder="e.g., Lahore"
-                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-amber-500"
                 required
               />
             </div>
@@ -124,7 +124,7 @@ export default function AddHostel() {
                 value={formData.state}
                 onChange={(e) => setFormData({ ...formData, state: e.target.value })}
                 placeholder="e.g., Punjab"
-                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-amber-500"
                 required
               />
             </div>
@@ -136,7 +136,7 @@ export default function AddHostel() {
                 value={formData.zipCode}
                 onChange={(e) => setFormData({ ...formData, zipCode: e.target.value })}
                 placeholder="e.g., 560001"
-                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-amber-500"
                 required
               />
             </div>
@@ -154,7 +154,7 @@ export default function AddHostel() {
                 min="1"
                 value={formData.floors}
                 onChange={(e) => setFormData({ ...formData, floors: parseInt(e.target.value) })}
-                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-amber-500"
                 required
               />
             </div>
@@ -166,7 +166,7 @@ export default function AddHostel() {
                 min="1"
                 value={formData.roomsPerFloor}
                 onChange={(e) => setFormData({ ...formData, roomsPerFloor: parseInt(e.target.value) })}
-                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-amber-500"
                 required
               />
             </div>
@@ -178,7 +178,7 @@ export default function AddHostel() {
                 min="1"
                 value={formData.studentsPerRoom}
                 onChange={(e) => setFormData({ ...formData, studentsPerRoom: parseInt(e.target.value) })}
-                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-amber-500"
                 required
               />
             </div>
@@ -194,13 +194,13 @@ export default function AddHostel() {
                 value={formData.pricePerStudent}
                 onChange={(e) => setFormData({ ...formData, pricePerStudent: e.target.value })}
                 placeholder="e.g., 8000"
-                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-amber-500"
                 required
               />
             </div>
 
-            <div className="md:col-span-2 p-4 bg-blue-50 rounded-lg">
-              <p className="text-sm text-blue-800">
+            <div className="md:col-span-2 p-4 bg-amber-50 border border-amber-200 rounded-lg">
+              <p className="text-sm text-amber-800">
                 <strong>Total Capacity:</strong> {formData.floors * formData.roomsPerFloor * formData.studentsPerRoom} students
                 ({formData.floors} floors × {formData.roomsPerFloor} rooms × {formData.studentsPerRoom} students)
               </p>
@@ -213,12 +213,12 @@ export default function AddHostel() {
 
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
             {amenitiesOptions.map((amenity) => (
-              <label key={amenity} className="flex items-center gap-3 cursor-pointer">
+              <label key={amenity} className="flex items-center gap-3 cursor-pointer p-2 rounded-lg hover:bg-amber-50 transition-colors">
                 <input
                   type="checkbox"
                   checked={formData.amenities.includes(amenity)}
                   onChange={() => toggleAmenity(amenity)}
-                  className="w-5 h-5 text-purple-600 rounded focus:ring-2 focus:ring-purple-500"
+                  className="w-5 h-5 text-amber-600 rounded focus:ring-2 focus:ring-amber-500"
                 />
                 <span className="text-sm">{amenity}</span>
               </label>
@@ -236,7 +236,7 @@ export default function AddHostel() {
           </button>
           <button
             type="submit"
-            className="flex-1 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 font-medium flex items-center justify-center gap-2"
+            className="flex-1 py-3 bg-gradient-to-r from-amber-600 to-orange-600 text-white rounded-lg hover:shadow-lg hover:shadow-amber-600/30 font-medium flex items-center justify-center gap-2 transition-shadow"
           >
             <Save className="w-5 h-5" />
             Submit for Verification
